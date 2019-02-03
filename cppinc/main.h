@@ -47,6 +47,7 @@
 #include "Scene3D.h"
 #include "Model3D.h"
 #include "AffineTransform.h"
+#include "models.h"
 
 #ifdef __cplusplus
 extern "C" {

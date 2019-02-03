@@ -75,7 +75,7 @@ void Scene3D::addModel(Matrix<> &v, const Matrix<int> &f, const Matrix<int> &im)
     model = temp;
 
     model[modelcount - 1].project(WorldToProject);
-    setDefPos();
+    //setDefPos();
 }
 
 void Scene3D::removeLastModel() // удалить последнюю модель

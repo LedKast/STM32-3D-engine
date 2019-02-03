@@ -93,27 +93,11 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	// INIT MODEL
-	double ver[] = {
-			2, 2, 6, 6, 4,
-			0, 0, 0, -5, 5.5,
-			4, 2, 2, 4, 3,
-			1, 1, 1, 1, 1
-	};
-	Matrix<> vertex(4, 5, ver);
 
-	int fa[] = {
-			1, 2, 4,
-			2, 3, 4,
-			1, 2, 5,
-			2, 3, 5,
-			3, 4, 5,
-			4, 1, 5,
-			1, 3, 2
-		};
-	Matrix<int> faces(7, 3, fa);
+	Matrix<> vertex(4, 8, ver);
+	Matrix<int> faces(9, 3, fa);
+	Matrix<int> im(3, 2, ima); // 1, 24
 
-	int ima[] = {2, 4};
-	Matrix<int> im(1, 2, ima);
 	scene.addModel(vertex, faces, im);
 //	scene.addModel(vertex, faces, im);
 //	scene.addModel(vertex, faces, im);
@@ -149,7 +133,7 @@ int main(void)
   bool scalingD = true;
   int fps3d = 0, fpsre = 0;
   ssd1306_Init();
-  scene.apply(translation3D(0,5,0));
+  scene.apply(translation3D(0,-2,0));
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -163,8 +147,8 @@ int main(void)
 	  scene.render();
 
 	  // transforms
-	  scene.apply(rotationY(3.14/20));
-	  scene.apply(rotationX(3.14/24));
+	  scene.apply(rotationY(3.14/24));
+	  scene.apply(rotationX(3.14/36));
 
 //	  if (scalingD && scalingCount < 10)
 //	  {
@@ -193,10 +177,10 @@ int main(void)
 	  fps3d = 1000 / (end - start);
 
 	  // display all FPS
-	  snprintf(buff, sizeof(buff), "3D %d", fps3d);
+	  snprintf(buff, sizeof(buff), "%d", fps3d);
 	  ssd1306_SetCursor(0,0);
 	  ssd1306_WriteString(buff, Font_7x10, White);
-	  snprintf(buff, sizeof(buff), "RE %d", fpsre);
+	  snprintf(buff, sizeof(buff), "%d", fpsre);
 	  ssd1306_SetCursor(0,10);
 	  ssd1306_WriteString(buff, Font_7x10, White);
 
