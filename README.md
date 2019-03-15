@@ -1,5 +1,5 @@
 # STM32 3D ENGINE
-STM32 3D endige + SSD1306 monitor
+STM32 3D engine + SSD1306 monitor
 
 Dirs:
   3dinc - 3D math,
