@@ -173,15 +173,15 @@ int main(void)
 	  end = HAL_GetTick();
 
 	  // 3D engine FPS count
-	  char buff[8];
-	  fps3d = 1000 / (end - start);
+	  // char buff[8];
+	  // fps3d = 1000 / (end - start);
 
 	  // display all FPS
-	  snprintf(buff, sizeof(buff), "%d", fps3d);
-	  ssd1306_SetCursor(0,0);
-	  ssd1306_WriteString(buff, Font_7x10, White);
+	  // snprintf(buff, sizeof(buff), "%d", fps3d);
+	  // ssd1306_SetCursor(0,0);
+	  // ssd1306_WriteString(buff, Font_7x10, White);
 	  snprintf(buff, sizeof(buff), "%d", fpsre);
-	  ssd1306_SetCursor(0,10);
+	  ssd1306_SetCursor(0,0);
 	  ssd1306_WriteString(buff, Font_7x10, White);
 
 	  ssd1306_UpdateScreen();
